@@ -1,4 +1,5 @@
 import sys
+import re
 
 class TrieTreeSearch(object):
 
@@ -71,7 +72,7 @@ class TrieTreeSearch(object):
         print final
         return 
 
-
-TrieTreeSearch().inputSort(sys.argv[1], sys.argv[2])
-
+if __name__ == '__main__':
+    trie = TrieTreeSearch()
+    trie.inputSort(sys.argv[1], sys.argv[2])
 
