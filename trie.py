@@ -12,7 +12,6 @@ class TrieTreeSearch(object):
             return
         return word_list
 
-
     def treeCreator(self, words):
         tree = dict()
         if words == None:
@@ -24,7 +23,6 @@ class TrieTreeSearch(object):
             current_node = current_node.setdefault(None, None)
         return tree     
 
-
     def recursiveTreewalker(self, tree, key, partial, final):
         if tree.get(key).keys() == [None]:
             final.append(partial + key)
@@ -35,7 +33,6 @@ class TrieTreeSearch(object):
                     final.append(partial)
                 if v != None:
                     self.recursiveTreewalker(tree.get(key), v, partial, final)
-
 
     def inputSort(self, prefix, data):
         keys = [i for i in prefix]
