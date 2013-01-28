@@ -5,11 +5,10 @@ class TrieTreeSearch(object):
     def fileOpener(self, file_to_open):
         try:
             with open(file_to_open) as f:
-                word_list = [i.strip('\r\n').split() for i in f.readlines()]
+                word_list = [i for v in f.readlines() for i in re.findall('[A-Za-z]+', v)]
         except IOError:
             print 'Bad file path or filename, double check the filename and path.'
             return
-        word_list = [i for v in word_list for i in v if ''.join(re.findall('\w', i)) == i]
         return word_list
 
 
