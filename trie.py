@@ -9,14 +9,7 @@ class TrieTreeSearch(object):
         except IOError:
             print 'Bad file path or filename, double check the filename and path.'
             return
-        f.close()
-        word_list = [i for v in word_list for i in v]
-        separate = []
-        for word in word_list:
-            for letter in word:
-                if not letter.isalpha():
-                    separate.append(word)
-        word_list = [i for i in word_list if i not in separate]
+        word_list = [i for v in word_list for i in v if ''.join(re.findall('\w', i)) == i]
         return word_list
 
 
