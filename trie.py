@@ -6,7 +6,7 @@ class TrieTreeSearch(object):
     def fileOpener(self, file_to_open):
         try:
             with open(file_to_open) as f:
-                word_list = [i for v in f.readlines() for i in re.findall('[A-Za-z]+', v)]
+                word_list = [i for i in re.findall('[A-Za-z]+', f.read())]
         except IOError:
             print 'Bad file path or filename, double check the filename and path.'
             return
