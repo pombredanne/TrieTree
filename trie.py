@@ -70,8 +70,10 @@ class TrieTreeSearch(object):
         return 
 
 if __name__ == '__main__':
-    trie = TrieTreeSearch()
-    prefix = sys.argv[1]
-    data = sys.argv[2]
-    trie.inputSort(prefix, data)
-
+    try:
+        trie = TrieTreeSearch()
+        prefix = sys.argv[1]
+        data = sys.argv[2]
+        trie.inputSort(prefix, data)
+    except IndexError:
+        print "Supply a prefix and file to search"
